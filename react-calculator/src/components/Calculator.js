@@ -1,0 +1,52 @@
+import React, { Component } from "react";
+import Screen from "./Screen/Screen";
+import KeyPad from "./KeyPad";
+
+class Calculator extends Component {
+  state = {
+    equation: "",
+    result: 0,
+  };
+
+  onButtonPress = (event) => {
+    let equation = this.state.equation;
+    const pressedButton = event.target.innerHTML;
+
+    if (pressedButton === "C") return this.clear();
+    else if (
+      (pressedButton >= "0" && pressedButton <= "9") ||
+      pressedButton === "."
+    )
+      equation += pressedButton;
+    else if (pressedButton === "=") {
+      try {
+        const evalResult = eval(equation);
+        const result = Number.isInteger(evalResult)
+          ? evalResult
+          : evalResult.toFixed(2);
+        this.setState({ result });
+      } catch (err) {
+        alert("Invalid Mathematical Equation");
+      }
+    } else {
+      equation = equation.trim();
+      equation = equation.substr(0, equation.length - 1);
+    }
+    this.setState({ equation: equation });
+  };
+
+  clear() {
+    this.setState({ equation: "", result: 0 });
+  }
+
+  render() {
+    return (
+      <main className="calculator">
+        <Screen equation={this.state.equation} result={this.state.result} />
+        <KeyPad onButtonPress={this.onButtonPress} />
+      </main>
+    );
+  }
+}
+
+export default Calculator;
