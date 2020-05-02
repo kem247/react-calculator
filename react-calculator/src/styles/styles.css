@@ -1,3 +1,11 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
   font-family: "Open-Sans";
@@ -16,8 +24,10 @@ body {
   --color-purple-transparent: rgba(88, 24, 69, 0.9);
   --color-pink-transparent: rgba(216, 14, 91, 0.9);
 
-  --color-orange: #ff3c00;
+  --color-teal: rgb(0, 128, 128);
 
+  --color-orange: #ff3c00;
+  --color-gold: #ccac00;
   --color-light-black: #222;
   --color-black: #000;
 
@@ -30,10 +40,10 @@ body {
   width: 100%;
   background-image: linear-gradient(
       to bottom right,
-      var(--color-pink-transparent),
+      var(--color-teal),
       var(--color-purple-transparent)
     ),
-    url(https://i.pinimg.com/originals/91/b5/cd/91b5cdab51e207263169904b227503b4.jpg);
+    url(https://cnn.it/2WwEFSj);
   background-size: cover;
 
   display: flex;
@@ -57,7 +67,7 @@ body {
   white-space: nowrap;
 
   color: var(--color-light-white);
-  background-color: var(--color-tomato);
+  background-color: var(--color-gold);
 }
 
 .comp-screen {
@@ -110,7 +120,7 @@ body {
 
 .btn:hover {
   color: var(--color-light-white);
-  background-color: var(--color-tomato);
+  background-color: var(--color-purple-transparent);
 }
 
 .btn:active {
@@ -120,18 +130,18 @@ body {
 .btn-large {
   width: 50%;
   color: var(--color-light-white);
-  background-color: var(--color-tomato);
+  background-color: var(--color-gold);
 }
 
 .btn-large:hover {
   background-color: var(--color-light-white);
-  color: var(--color-tomato);
+  color: var(--color-gold);
 }
 
 .btn-primary {
-  color: var(--color-tomato);
+  color: var(--color-gold);
 }
 
 .btn-operator {
-  color: var(--color-orange);
+  color: var(--color-purple-transparent);
 }

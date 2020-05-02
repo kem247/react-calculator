@@ -1,8 +1,8 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+
 import KeyPadRow from "./KeyPadRow";
 import Button from "./Button";
-
+import LargeButton from "./LargeButton";
 const KeyPad = (props) => (
   <section className="keypad">
     <KeyPadRow>
@@ -50,7 +50,7 @@ const KeyPad = (props) => (
     <KeyPadRow>
       <Button onButtonPress={props.onButtonPress}>0</Button>
       <Button onButtonPress={props.onButtonPress}>.</Button>
-      <Button onButtonPress={props.onButtonPress}>=</Button>
+      <LargeButton onButtonPress={props.onButtonPress}>=</LargeButton>
     </KeyPadRow>
   </section>
 );

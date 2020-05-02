@@ -6,9 +6,9 @@ const Button = (props) => {
   if (typeof props !== "undefined" && typeof props.type !== "undefined")
     classes.push("btn-" + props.type);
   return (
-    <Button className={classes.join(" ")} onClick={props.onButtonPress}>
+    <button className={classes.join(" ")} onClick={props.onButtonPress}>
       {props.children}
-    </Button>
+    </button>
   );
 };
 export default Button;
